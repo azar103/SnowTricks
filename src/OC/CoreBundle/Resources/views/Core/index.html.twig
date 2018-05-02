@@ -1,0 +1,63 @@
+{% extends "OCCoreBundle::layout.html.twig" %}
+{% block title %}
+    {{ parent() }}- page d'accueil
+{% endblock %}
+{% block nav %}
+
+    <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Présentation</a></li>
+      <li><a href="#tricks"><span class="glyphicon glyphicon-sunglasses"></span> Les Tricks</a></li>
+      <li><a href="#addTrick"><span class="glyphicon glyphicon-tree-conifer"></span> Ajouter un Trick ?</a></li>
+      <li><a href="#foot"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+          <li><a href="{{path('oc_community_user_login')}}"><span class="glyphicon glyphicon-globe"></span> Se connecter</a></li>
+      <li><a href="{{path('oc_community_user_register')}}"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
+
+{% endblock %}
+{% block body %}
+<div class="well">
+    <h1 class="text-center">Bienvenue sur SNOWTRICKMANIA.COM</h1>
+    <hr>
+    <div class="row">
+    
+    <h3 class="text-center">SnowTrickMania est consacré à l'art du Snowboard et ses Tricks aussi bien pour les passionnés que les néophytes dans le domaine.</h3>
+
+    <div class="col-md-12 text-center"> 	
+    <a href="#" class="btn btn-primary  text-center btn-lg btn-success" >Voir les Tricks</a>
+    </div> 
+
+    </div>
+</div>
+<p style="margin-top:84px;">
+<h3 class="text-center" >Voici la liste des Tricks entretenues par la communautée</h3>
+<hr>
+</p>
+ <section id="tricks">
+ <div class="row">
+  {% for trick in listTricks %}
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <a href="{{path('oc_community_user_view', {'id' : trick.id})}}">
+
+        <img src="{{ trick.url }}" alt="Lights" style="width:100%">
+        <div class="caption">
+          <p>{{ trick.title }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+{% endfor %}
+</div>
+</section>
+<hr>
+<section id="addTrick" class="container-fluid" >
+	<div class="row" style="margin-bottom:95px;">
+    
+    <h3 class="text-center">Vous désirez ajouter un Trick?</h3>
+
+    <div class="col-md-12 text-center"> 	
+    <a href="{{path('oc_community_user_login')}}" class="btn btn-primary  text-center btn-lg btn-warning" >Pour cela merci de s'authentifier </a>
+    </div> 
+
+    </div>
+</section>
+{% endblock %}
+

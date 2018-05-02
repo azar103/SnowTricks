@@ -1,0 +1,10 @@
+{% extends "OCCoreBundle::layout.html.twig "%}
+
+
+{% block nav %}
+
+    <li ><a href="{{path('oc_core_homepage')}}"> <span class="glyphicon glyphicon-share-alt"></span> Retour à l'accueil</a></li>
+        <li><a href="{{path('oc_community_user_login')}}"><span class="glyphicon glyphicon-globe"></span> Se connecter</a></li>
+      <li><a href="{{path('oc_community_user_register')}}"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
+      
+{% endblock %}

@@ -1,0 +1,62 @@
+oc_community_user_register:
+    path:     /register
+    defaults: { _controller: OCCommunityBundle:User:add }
+
+oc_community_user_profile:
+    path:     /profile
+    defaults: { _controller: OCCommunityBundle:User:view }   
+
+oc_community_user_edit:
+    path:     /profile/edit
+    defaults: { _controller: OCCommunityBundle:User:edit }  
+
+oc_community_user_login:
+    path:    /login
+    defaults: { _controller: OCCommunityBundle:User:login }     
+
+oc_community_trick_home:
+    path: /tricks
+    defaults: { _controller: OCCommunityBundle:Trick:index }
+
+oc_community_trick_add:
+    path:   /trick/add
+    defaults: { _controller: OCCommunityBundle:Trick:add }
+
+oc_community_trick_edit:
+    path: /trick/edit/{id}
+    defaults: { _controller: OCCommunityBundle:Trick:edit }
+    requirements:
+            id: \d+
+
+oc_community_trick_delete:
+    path: /trick/delete/{id}
+    defaults: { _controller: OCCommunityBundle:Trick:delete }
+    requirements:
+            id: \d+            
+
+oc_community_trick_view:
+    path: /trick/view/{id}/{page}
+    defaults: { _controller: OCCommunityBundle:Trick:view,
+                page: 1 
+              }
+    requirements:
+            id: \d+ 
+            page: \d*
+
+oc_community_user_view:
+    path: /trickUser/view/{id}/{page}
+    defaults: { _controller: OCCommunityBundle:User:view,
+                page: 1 
+              }
+    requirements:
+            id: \d+ 
+            page: \d*            
+
+
+
+
+
+
+
+
+
